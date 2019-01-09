@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class WorkshopDemoApplication {
+	
+	@Value("${my.applications.name: Fallback}")
+	String env;
+	
+	@GetMapping("/test")
+	String getName() {
+		
+		return this.env;
+		
+	}
 	
 	@GetMapping("/hello")
 	String sayHello() {
