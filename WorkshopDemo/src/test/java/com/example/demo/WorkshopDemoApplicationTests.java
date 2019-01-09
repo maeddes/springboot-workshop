@@ -25,6 +25,7 @@ public class WorkshopDemoApplicationTests {
 	@MockBean
 	private Service service;
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void thingtest() throws Exception{
 		
