@@ -2,7 +2,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,env,info,configprops
+        include: health,env,info,configprops,loggers,refresh
 logging:
   group:
     test: 
@@ -12,7 +12,8 @@ server:
 spring:
   application:
     name: standard
-
+config:
+  property: 0711
 
   
 
