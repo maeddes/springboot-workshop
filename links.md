@@ -10,3 +10,7 @@ Logging:
 Data:
 - https://gitpitch.com/maeddes/gitpitch-spring-data
 
+Useful Links:
+- https://www.baeldung.com/
+- https://spring.io/guides
+
