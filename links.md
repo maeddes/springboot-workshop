@@ -7,3 +7,6 @@ Test:
 Logging:
 - https://gitpitch.com/Etone/spring-boot-logging
 
+Data:
+- https://gitpitch.com/maeddes/gitpitch-spring-data
+
