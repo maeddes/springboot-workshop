@@ -17,6 +17,7 @@ public class ResourceConfiguration {
     // add more components if necessary
     @Bean
     public ResourceConfig resourceConfig() {
+        log.info("adding components to ResourceConfig");
         return new ResourceConfig().register(WelcomeComponent.class);
     }
 }
