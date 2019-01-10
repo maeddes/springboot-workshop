@@ -2,6 +2,9 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,12 +18,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WorkshopDemoApplication {
 	
-	@Value("${my.applications.name: Fallback}")
+	Logger logger = LoggerFactory.getLogger(WorkshopDemoApplication.class);
+	
+	@Value("${spring.application.name: Fallback}")
 	String env;
+	
+	@Autowired
+	private Service service;
 	
 	@GetMapping("/test")
 	String getName() {
-		
+		logger.info("getName called while env was {}", env);
+		service.logService();
 		return this.env;
 		
 	}
@@ -52,6 +61,12 @@ public class WorkshopDemoApplication {
 		return things.toString();
 		
 	}
+	
+	@GetMapping("/nicethings")
+	public String niceThings() {
+		return "mercedes";
+	}
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(WorkshopDemoApplication.class, args);
